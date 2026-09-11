@@ -1,9 +1,17 @@
-# ItemEffects
+# Idea
+Giving an easy but not overpowered way to get an early game option for fighting with poison effects.
 
-## Setup
+# How it works
+With a mixin that gets called when an living entity or player gets hit that checks whether the player attacked with specific items that can give the entity/player an effect
 
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+# Itemeffects
+Stick = Weakness
+Ink Sac = Blindness
+Glowing Inc Sac = Blindness + Glowing
+Glow Berries = Glowing
+Pufferfish = Poison
+String = Slowness
+Slimeball = Slowness
+Wither Rose = Wither
+Wind Charge = Jump Boost
+Spectral Arrow = Glowing
