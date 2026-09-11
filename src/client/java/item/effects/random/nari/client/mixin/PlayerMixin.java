@@ -30,9 +30,45 @@ public abstract class PlayerMixin extends LivingEntity{
     @Inject(at = @At("TAIL"), method = "attack")
 	private void init(Entity entity, CallbackInfo info) {
         ItemStack attackingItemStack = this.getWeaponItem();
-        if(attackingItemStack.is(Items.PUFFERFISH)&& entity instanceof LivingEntity livingEntity)
+        if(attackingItemStack.is(Items.PUFFERFISH)&& entity instanceof LivingEntity livingEntity) {
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 6 * 8, 0));
+        }
+        if(attackingItemStack.is(Items.GLOW_BERRIES)&&entity instanceof LivingEntity livingEntity)
         {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 6*300 , 0));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 6 * 8, 0));
+        }
+        if(attackingItemStack.is(Items.WITHER_ROSE)&& entity instanceof LivingEntity livingEntity)
+        {
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, 6*8,0));
+        }
+        if(attackingItemStack.is(Items.INK_SAC)&&entity instanceof LivingEntity livingEntity)
+        {
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 6*5, 3));
+        }
+        if(attackingItemStack.is(Items.STICK)&& entity instanceof LivingEntity livingEntity)
+        {
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 6*5,0));
+        }
+        if(attackingItemStack.is(Items.GLOW_INK_SAC)&& entity instanceof LivingEntity livingEntity)
+        {
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 6*5,0));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 6*5,0));
+        }
+        if(attackingItemStack.is(Items.STRING)&& entity instanceof LivingEntity livingEntity)
+        {
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 6*5,0));
+        }
+        if(attackingItemStack.is(Items.SLIME_BALL)&& entity instanceof LivingEntity livingEntity)
+        {
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 6*5,0));
+        }
+        if(attackingItemStack.is(Items.WIND_CHARGE)&& entity instanceof LivingEntity livingEntity)
+        {
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP_BOOST, 6*5,2));
+        }
+        if(attackingItemStack.is(Items.SPECTRAL_ARROW)&& entity instanceof LivingEntity livingEntity)
+        {
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 6*5,0));
         }
     }
 }
